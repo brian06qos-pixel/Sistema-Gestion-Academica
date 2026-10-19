@@ -1,8 +1,8 @@
 # Sistema de Gestión Académica — POO en Python
 
-**Institución:** Universidad de Manizales — Facultad de Ciencias e Ingenierías  
+**Institución:** Universidad de Manizales  
 **Actividad:** Construcción de un Sistema de Gestión Académica utilizando Programación Orientada a Objetos  
-**Integrante:** Brian David Bedoya Ramírez (trabajo individual; verificar nombre antes de entregar).
+**Integrante:** Brian David Bedoya Ramírez (trabajo individual)
 
 ## Descripción
 
