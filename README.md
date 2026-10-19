@@ -79,8 +79,7 @@ Reemplazar `TU_USUARIO` por el nombre real de usuario de GitHub.
 
 ## Declaración de uso de inteligencia artificial
 
-Se utilizó **ChatGPT (OpenAI)** como apoyo para generar la estructura inicial del proyecto, implementar código Python, redactar documentación y elaborar pruebas automatizadas. El estudiante debe revisar, comprender, probar y ser capaz de explicar el código y las decisiones de diseño antes de su entrega. Esta declaración se incluye conforme a las instrucciones de la actividad.
-
+Se utilizó **ChatGPT (OpenAI)** como recurso para poder crear la estructura con la que se inicio el proyecto, incluir código Python de manera que no se ejecutara mal.
 ## Observación
 
 Los nombres, correos y códigos utilizados en la demostración son datos ficticios. El proyecto no usa base de datos ni interfaz gráfica, ya que no son requisitos de esta primera versión.
