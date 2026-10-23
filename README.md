@@ -53,31 +53,7 @@ En algunos equipos se utiliza `python3` en lugar de `python`.
 
 El archivo `tests/test_sistema.py` comprueba constructores, consultas, actualizaciones válidas, rechazo de valores inválidos, herencia y polimorfismo. Además, `main.py` imprime el resultado de las operaciones y un reporte de las seis personas.
 
-## Publicación y entrega en GitHub
-
-1. Crear un repositorio en GitHub llamado `Sistema-Gestion-Academica`.
-2. Subir el contenido de esta carpeta conservando la estructura.
-3. Crear al menos un **commit real** correspondiente al desarrollo, con un mensaje descriptivo (por ejemplo: `Implementar modelos y pruebas del sistema académico`). No se deben fabricar commits de otras personas.
-4. Comprobar que el proyecto se ejecuta y que el README se visualiza correctamente en GitHub.
-5. Crear una etiqueta para esta entrega, por ejemplo `v1.0-actividad-1`, y no modificar posteriormente los archivos asociados con esa versión.
-6. Entregar a la universidad el enlace real del repositorio.
-
-Si se utiliza Git localmente, tras configurar la cuenta y crear el repositorio remoto:
-
-```bash
-git init
-git add .
-git commit -m "Implementar sistema académico POO y pruebas"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/Sistema-Gestion-Academica.git
-git push -u origin main
-git tag v1.0-actividad-1
-git push origin v1.0-actividad-1
-```
-
-Reemplazar `TU_USUARIO` por el nombre real de usuario de GitHub.
-
-## Declaración de uso de inteligencia artificial
+# Declaración de uso de inteligencia artificial
 
 Se utilizó **ChatGPT (OpenAI)** como recurso para poder crear la estructura con la que se inicio el proyecto, incluir código Python de manera que no se ejecutara mal.
 ## Observación
