@@ -1,61 +1,41 @@
-# Sistema de Gestión Académica — POO en Python
+# Sistema de Gestión Académica — Actividad Colaborativa N.º 2
 
-**Institución:** Universidad de Manizales  
-**Actividad:** Construcción de un Sistema de Gestión Académica utilizando Programación Orientada a Objetos  
-**Integrante:** Brian David Bedoya Ramírez (trabajo individual)
+**Universidad de Manizales — Programación Orientada a Objetos**  
+**Integrante:** Brian David Bedoya Ramírez (trabajo individual)  
+**Repositorio original:** https://github.com/brian06qos-pixel/Sistema-Gestion-Academica
 
 ## Descripción
-
-Primera versión de un sistema universitario que representa programas académicos, asignaturas, estudiantes, docentes y administrativos. Es **un único proyecto**, desarrollado de forma integrada, para evidenciar las cinco fases de la actividad.
-
-## Estructura
-
-```text
-Sistema-Gestion-Academica/
-├── main.py                 # Demostración ejecutable del sistema
-├── modelos/
-│   ├── __init__.py         # Exportación de las clases
-│   ├── persona.py          # Persona, Estudiante, Docente, Administrativo
-│   └── academico.py        # ProgramaAcademico, Asignatura
-├── tests/
-│   └── test_sistema.py     # Pruebas automatizadas
-├── .gitignore
-└── README.md
-```
+Evolución del sistema de la Actividad 1. Se conservan las clases de personas, programas y asignaturas y se agregan abstracción, composición, grupos académicos, matrículas, búsquedas y excepciones personalizadas.
 
 ## Requisitos y ejecución
-
-Python 3.9 o superior. No requiere instalar bibliotecas externas.
-
-Desde la carpeta raíz del proyecto:
+Python 3.9 o superior; no requiere bibliotecas externas.
 
 ```bash
 python main.py
-```
-
-Para ejecutar las pruebas:
-
-```bash
 python -m unittest discover -s tests -v
 ```
 
-En algunos equipos se utiliza `python3` en lugar de `python`.
+## Organización
+- `modelos/persona.py`: Persona abstracta, Estudiante, Docente y Administrativo.
+- `modelos/academico.py`: ProgramaAcademico y Asignatura.
+- `modelos/grupo.py`: GrupoAcademico y Horario.
+- `modelos/catalogo.py`: búsquedas de asignaturas y programas.
+- `modelos/excepciones.py`: cinco excepciones de negocio.
+- `tests/test_ac2.py`: pruebas automatizadas de la evolución.
+- `main.py`: demostración de los 11 casos mínimos.
+- `Documento_Decisiones_Diseno_AC2.docx`: explicación técnica de las decisiones.
 
-## Evidencia de las cinco fases
+## Composición frente a herencia
+Un grupo **tiene un** horario, pero no **es un** horario. Por eso `GrupoAcademico` crea y conserva un objeto `Horario` en su constructor; es composición, no herencia. Por contraste, Estudiante **es una** Persona, por lo que sí corresponde la herencia.
 
-1. **Clases, objetos y constructores:** `ProgramaAcademico`, `Asignatura` y `Persona`, con inicialización en `__init__`. El programa principal crea dos programas, tres asignaturas y seis personas.
-2. **Encapsulamiento:** atributos privados con `__`, propiedades de consulta y métodos de actualización. Se rechazan correos vacíos, semestres no positivos y créditos no positivos con `ValueError`. Se demuestran cambios válidos e intentos inválidos.
-3. **Herencia:** `Estudiante`, `Docente` y `Administrativo` heredan de `Persona` y usan `super().__init__()` para no duplicar datos comunes.
-4. **Sobreescritura:** las tres subclases implementan su propio `mostrar_informacion()` y `realizar_actividad_principal()`.
-5. **Polimorfismo:** en `main.py` existe una colección heterogénea con dos instancias de cada subclase, recorrida con un único `for`, sin condicionales por tipo.
+## Excepciones personalizadas
+`EstudianteYaMatriculadoError`, `GrupoLlenoError`, `EstudianteNoMatriculadoError`, `AsignaturaNoEncontradaError` y `ProgramaNoEncontradoError` se lanzan en las operaciones que detectan los problemas y se capturan en `main.py` para continuar la demostración.
 
-## Pruebas
+## Continuidad con AC1
+`Persona` conserva sus datos y métodos, pero ahora hereda de `ABC` y declara `realizar_actividad_principal()` con `@abstractmethod`. Sus tres subclases conservan las implementaciones especializadas. Se mantienen encapsulamiento, sobreescritura y polimorfismo.
 
-El archivo `tests/test_sistema.py` comprueba constructores, consultas, actualizaciones válidas, rechazo de valores inválidos, herencia y polimorfismo. Además, `main.py` imprime el resultado de las operaciones y un reporte de las seis personas.
+## Versionado y entrega
+**Antes de subir esta versión**, identificar el último commit de la Actividad 1 mediante una etiqueta `Entrega_AC1` si aún no existe. Subir después los archivos de esta carpeta al **mismo** repositorio, registrar al menos un commit propio de AC2 y crear el tag `Entrega_AC2` apuntando al commit final. No reescribir el historial de AC1.
 
-# Declaración de uso de inteligencia artificial
-
-Se utilizó **ChatGPT (OpenAI)** como recurso para poder crear la estructura con la que se inicio el proyecto, incluir código Python de manera que no se ejecutara mal.
-## Observación
-
-Los nombres, correos y códigos utilizados en la demostración son datos ficticios. El proyecto no usa base de datos ni interfaz gráfica, ya que no son requisitos de esta primera versión.
+## Uso de inteligencia artificial
+Se utilizó ChatGPT (OpenAI) como apoyo para estructurar y redactar código, preparar pruebas, revisar la solución y elaborar documentación. El integrante debe verificar el funcionamiento, comprender y poder justificar todas las decisiones antes de entregar.
